@@ -74,9 +74,10 @@ Rabe-Hesketh, S., & Skrondal, A. (2012). Multilevel and Longitudinal Modeling Us
 #                Es importante que los datos de su tarea,
 #                sean generados con su RUT.
 
+library(dplyr)
 set.seed(1234567890)
-
-datos_salarios <- datos_full[sample(1:272500, 1000),]
+datos_salarios <- datos_full %>%
+                  dplyr::slice_sample(n = 1000)
 
 
 ```
